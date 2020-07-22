@@ -1,0 +1,126 @@
+
+/* top level variables */
+:root {
+    --golden-ratio: 1.61803398875;
+    --top-level-font: 53px;
+    --top-level-dimension: calc(var(--top-level-font) * var(--golden-ratio) * var(--golden-ratio))
+}
+
+/* content is the top-level div */
+.content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+/* main block CSS */
+.main_block {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #bf5700;
+    max-width: calc(2 * var(--top-level-dimension) * var(--golden-ratio));
+    max-height: calc(2 * var(--top-level-dimension));
+    padding-top: var(--top-level-dimension);
+    padding-bottom: var(--top-level-dimension);
+    padding-left: calc(var(--top-level-dimension) * var(--golden-ratio));
+    padding-right: calc(var(--top-level-dimension) * var(--golden-ratio));
+}
+
+.main_block a:link {
+    color: #0432ff;
+    font-style: italic;
+    text-decoration: none;
+}
+.main_block a:visited {
+    color: #0432ff;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.main_block h1 {
+    text-align: center;
+    color: white;
+    font-size: var(--top-level-font);
+    font-family: 'Times New Roman';
+    font-weight: normal;
+}
+.main_block h2 {
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman';
+    font-size: calc(var(--top-level-font) / var(--golden-ratio));
+    font-weight: normal;
+}
+.main_block h3 {
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman';
+    font-size: calc(calc(var(--top-level-font) / var(--golden-ratio) / var(--golden-ratio)));
+    font-weight: normal;
+}
+
+
+/* portfolio CSS */
+.portfolio {
+    position: relative;
+    border: 1px solid black;
+    padding-top: calc(var(--top-level-dimension));
+    padding-bottom: calc(var(--top-level-dimension) * var(--golden-ratio) * var(--golden-ratio));
+}
+
+.portfolio h1{
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: var(--top-level-font);
+    font-weight: normal;
+}
+
+.portfolio h2{
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: calc(var(--top-level-font) / var(--golden-ratio));
+    font-weight: normal;
+}
+
+.portfolio h3{
+    color: black;
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: calc(calc(var(--top-level-font) / var(--golden-ratio) / var(--golden-ratio)));
+    font-weight: normal;
+}
+.portfolio a:link{
+    color: #0432ff;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.porfolio a:visited{
+    color: #0432ff;
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* project styling */
+.project {
+    position: relative;
+    text-align: center;
+    /* padding-left: var(--top-level-dimension); */
+}
+.project h1{
+    text-align: center;
+    font-family: 'Times New Roman';
+    font-size: calc(var(--top-level-font) / var(--golden-ratio));
+}
+.project p{
+    font-style: 'Times New Roman';
+    text-align: left;
+    text-indent: 4ch;
+    padding-left: calc(var(--top-level-dimension) / var(--golden-ratio));
+    padding-right: calc(var(--top-level-dimension) / var(--golden-ratio));
+}

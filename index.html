@@ -1,276 +1,87 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
-
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+    <link rel="stylesheet" href="styles.css">
+    <title>Daniel Sullivan</title>
+  </head>
+  <body>
+    <canvas>
+
+    </canvas>
+    <div class="content">
+      <div class="main_block">
+        <h1>Daniel Sullivan</h1>
+        <h2>Engineer</h2>
+        <h3><a href="./resume.pdf" >Resume</a></h3>       
+      </div>
+      <div class="portfolio">
+        <h1>Portfolio</h1>
+        <h2><a href="https://github.com/daniel-p-sullivan">GitHub</a></h2>
+        <div class="project">
+          <h1>Design and Control of an Inverted Pendulum</h1>
+          <video width="400" height="320" controls>
+            <source src="inverted_pendulum.mp4" type="video/mp4">
+          </video>
+          <p>
+            I developed this Inverted Pendulum system to learn more about control theory, a topic I focused on during my undergraduate degree.  My GitHub contains all relevant technical files to reproduce this inverted pendulum. STL files, C code, pinouts, and a BOM are provided. Feel free to reach out with any questions.
+          </p>
+          <p>
+            Embedded C code was created for LQR, PID, P, and PI control of the inverted pendulum (and written for two different AVR uC's!). Embedded C code was also written for driving a DC motor (interfacing with an H-bridge), and interfacing with the 2 system rotary encoders through the AVR's interrupt service routines.
+          </p>
+          <p>
+            SolidWorks was utilized for all mechanical design aspects. All 3D printed parts were printed from PLA on an Ender 3 Pro.              LabVIEW, MATLAB, and Python were used for data acquisition, simulation, modeling, system identification, and control system design tasks.
+          </p>
+          <p>
+            I am continuing to work on this project in my spare time.  I hope to implement swing up control, Lyapunov stability, and offline trajectory optimization when I have the time.  If I had the opportunity to work on this project again, I would have used Simulink to develop the controller.  I knew how to program in C prior to this project, so being able to write a bare-metal program was fun, but I would have rather spent more time on the control-theory aspects of this project.
+          </p>
+          <br>
+        </div>
+        <br>
+        <div class="project">
+          <h1>Python Scripts and VBA for Product BOM Management</h1>
+          <h3><i>Self-started project completed as an employee of Edwards Lifesciences</i></h3>
+          <p>
+            When I was hired on to Edwards Lifesciences in 2018, my project team was tasked with re-working over 750 seperate models within Edwards portfolio.  As these scripts were developed for Edwards Lifesciences, I am not able to share them here.
+          </p>
+          <p>
+            With my programming knowledge, I instantly saw process-improvements that could be made.  Our Excel BOMs were inefficient, and required much more manual interaction than required.  In order to resolve this, I developed Excel VBA Macros for our team to automate the process of BOM creation and checking.
+          </p>
+          <p>
+            Later in the project, when running analysis on all 750 of the Excel BOMs was more important, I developed a small library of Python scripts to interact with our Excel BOMs.  Throughout the lifetime of the project, there were multiple times where my Python library was <i><b>able to save my team months of work.</b></i>
+          </p>
+        </div>
+        <br>
+        <div class="project">
+          <h1>Analysis of General Electric LM2500 G4+DLE Aeroderivative Gas Turbine</h1>
+          <h2><a href="https://github.com/daniel-p-sullivan/TFS-Project">GitHub</a></h2>
+          <img src="./images/ge_turbine.jpg" height="400">
+          <img src="./images/ge_simulation_plot.png" height="400">
+          <p>
+            All MATLAB code written for this project is available at the GitHub link above.  Top-level scripts to run, and which would be helpful to understand the organization of the project are "Cycle_Solver_Phase_1.m" and "Cycle_Solver_Phase_2.m".  These are the main scripts of the project, and the majority of the other ".m" files house object-oriented MATLAB classes which are used in the top-level scripts.  A README has been included to help explain the objects and functions.
+          </p>
+          <p>
+            This report was a semester long deliverable for a class in advanced thermal fluid systems.  The goal of our project was to reverse-engineer many aspects of the G.E. LM2500 G4+DLE gas turbine that was being used within the U.T. power plant.  Using measurements taken from the turbine at various inlet airflow temperature's my team succesfully created a MATLAB simulation of the G.E. system.  The simulation, once optimized against data measured from the G.E. turbine, was able to calculate the efficiencies of the low and high pressure turbines and compressors located within the system.  From this project I furthered my understanding of the difficult thermodynamic and heat transfer processes involved in power generation.  My team and I learned how operating temperatures, pressures, mass-flow rates, and device efficiencies affected turbines, compressors, and combustors performance and the operating conditions for effective power generation. 
+          </p>
+        </div>
+        <div class="project">
+          <h1>C++ Wave Simulator</h1>
+          <h2><a href="https://github.com/daniel-p-sullivan/cpp_wave"></a></h2>
+          <img src="./images/wave_simulator1.gif">
+          <p>
+            I started this project with the intention of learning C++.  I found Java source code for the simulator, and learned to translate it into highly optimized C++ code.  The C++ Code I wrote simulated the shallow water equations, a special solution to the Navier-stokes equations.  The simulator uses the equations along with a 3 step Runge-Kutta to iterate through time with varying time steps.
+          </p>
+          <p>
+            The python program "CFD_CPP_2D.py" makes and runs the C++ program. The C++ program writes text files to a "./out/" directory and then the python program will plot and save png files of the data plots.  After all plots have been made, a program called FFmpeg combines all the png files into a gif and avi file. 
+          </p>
+          <p>
+            "CFD_CPP_2D.cpp", "DomainFunctions.cpp", and "FileWriter.cpp" are the main C++ files.  The python plotter is named "CFD_CPP_2D.py".
+          </p>
+        </div>
+      </div>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
-
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Ryan Fitzgerald</h1>
-            <h2>Software Engineer</h2>
-            <a href="#" class="btn-rounded-white">Download Resume</a>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat. Donec
-                        eu vehicula neque. Donec viverra lorem nunc, tempus euismod eros sollicitudin ut. Quisque et tincidunt libero. Donec id pharetra justo. Proin euismod lacinia dolor, eu scelerisque justo tempus pharetra. Vivamus nunc justo, finibus
-                        ut nisl sed, euismod rhoncus nulla. Proin sed magna egestas, egestas ante et, congue eros. In consequat, mauris dapibus tincidunt suscipit, ex libero aliquet diam, at maximus risus enim non leo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-        </div>
-    </div>
-    <!-- End #projects -->
-
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Ruby</li>
-            <li>Go</li>
-            <li>Node.js</li>
-            <li>AngularJs</li>
-            <li>React</li>
-            <li>Elixir</li>
-            <li>Java</li>
-            <li>C</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>Ruby on Rails</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/email@email.com">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2017 YOUR NAME
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End footer -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-</body>
-
+  </body>
 </html>
