@@ -6,6 +6,11 @@
     --top-level-dimension: calc(var(--top-level-font) * var(--golden-ratio) * var(--golden-ratio))
 }
 
+@font-face {
+    font-family: "Alegreya";
+    src: url("./css/fonts/alegreya-regular-webfont.woff") format("woff")
+}
+
 /* content is the top-level div */
 .content {
     position: absolute;
@@ -44,7 +49,7 @@
     text-align: center;
     color: white;
     font-size: var(--top-level-font);
-    font-family: 'Times New Roman';
+    font-family: 'Alegreya', 'Times New Roman';
     font-weight: normal;
 }
 .main_block h2 {
