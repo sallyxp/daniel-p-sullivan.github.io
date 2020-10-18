@@ -9,78 +9,93 @@
     <title>Daniel Sullivan</title>
   </head>
   <body>
-    <canvas>
-
-    </canvas>
-    <div class="content">
+    <aside>
       <div class="main_block">
-        <h1>Daniel Sullivan</h1>
-        <h2>Engineer</h2>
-        <h3><a href="./files/resume.pdf" >Resume</a></h3>
-        <h3><a href="#portfolio">Portfolio</a></h3>       
+      <h1>Daniel Sullivan</h1>
+      <h2>Engineer</h2>
+      <h3><a href="./files/resume.pdf" >Resume</a></h3>
+      <nav class="main_nav">
+        <ul>
+          <li class="active">
+            <a href="#projects"><h3>Projects</h3></a>
+          </li>
+          <li>
+            <h3><a href="#about">About</a></h3>
+          </li>
+          <li>
+            <h3><a href="#writing">Writing</a></h3>
+          </li>          
+        </ul>
+      </nav>  
       </div>
-      <div class="portfolio" id="portfolio">
-        <h1>Portfolio</h1>
-        <h2><a href="https://github.com/daniel-p-sullivan">GitHub</a></h2>
-        <div class="project">
-          <h1>Design and Control of an Inverted Pendulum</h1>
-          <video width="400" height="320" controls>
-            <source src="./files/inverted_pendulum.mp4" type="video/mp4">
-          </video>
-          <p>
-            I developed this Inverted Pendulum system to learn more about control theory, a topic I focused on during my undergraduate degree.  My GitHub contains all relevant technical files to reproduce this inverted pendulum. STL files, C code, pinouts, and a BOM are provided. Feel free to reach out with any questions.
-          </p>
-          <p>
-            Embedded C code was created for LQR, PID, P, and PI control of the inverted pendulum (and written for two different AVR uC's!). Embedded C code was also written for driving a DC motor (interfacing with an H-bridge), and interfacing with the 2 system rotary encoders through the AVR's interrupt service routines.
-          </p>
-          <p>
-            SolidWorks was utilized for all mechanical design aspects. All 3D printed parts were printed from PLA on an Ender 3 Pro.              LabVIEW, MATLAB, and Python were used for data acquisition, simulation, modeling, system identification, and control system design tasks.
-          </p>
-          <p>
-            I am continuing to work on this project in my spare time.  I hope to implement swing up control, Lyapunov stability, and offline trajectory optimization when I have the time.  If I had the opportunity to work on this project again, I would have used Simulink to develop the controller.  I knew how to program in C prior to this project, so being able to write a bare-metal program was fun, but I would have rather spent more time on the control-theory aspects of this project.
-          </p>
+    </aside>
+    <div class="content">
+      
+      <div class="content-item">
+        <div class="projects" id="projects">
+          <h1>Projects</h1>
+          <h2><a href="https://github.com/daniel-p-sullivan">GitHub</a></h2>
+          <div class="project">
+            <h1>Design and Control of an Inverted Pendulum</h1>
+            <video width="400" height="320" controls>
+              <source src="./files/inverted_pendulum.mp4" type="video/mp4">
+            </video>
+            <p>
+              I developed this Inverted Pendulum system to learn more about control theory, a topic I focused on during my undergraduate degree.  My GitHub contains all relevant technical files to reproduce this inverted pendulum. STL files, C code, pinouts, and a BOM are provided. Feel free to reach out with any questions.
+            </p>
+            <p>
+              Embedded C code was created for LQR, PID, P, and PI control of the inverted pendulum (and written for two different AVR uC's!). Embedded C code was also written for driving a DC motor (interfacing with an H-bridge), and interfacing with the 2 system rotary encoders through the AVR's interrupt service routines.
+            </p>
+            <p>
+              SolidWorks was utilized for all mechanical design aspects. All 3D printed parts were printed from PLA on an Ender 3 Pro.              LabVIEW, MATLAB, and Python were used for data acquisition, simulation, modeling, system identification, and control system design tasks.
+            </p>
+            <p>
+              I am continuing to work on this project in my spare time.  I hope to implement swing up control, Lyapunov stability, and offline trajectory optimization when I have the time.  If I had the opportunity to work on this project again, I would have used Simulink to develop the controller.  I knew how to program in C prior to this project, so being able to write a bare-metal program was fun, but I would have rather spent more time on the control-theory aspects of this project.
+            </p>
+            <br>
+          </div>
           <br>
+          <br>
+          <div class="project">
+            <h1>Analysis of General Electric LM2500 G4+DLE Aeroderivative Gas Turbine</h1>
+            <h2><a href="https://github.com/daniel-p-sullivan/TFS-Project">GitHub</a></h2>
+            <img src="./images/ge_turbine.jpg" height="400">
+            <img src="./images/ge_simulation_plot.png" height="400">
+            <p>
+              All MATLAB code written for this project is available at the GitHub link above.  Top-level scripts to run, and which would be helpful to understand the organization of the project are "Cycle_Solver_Phase_1.m" and "Cycle_Solver_Phase_2.m".  These are the main scripts of the project, and the majority of the other ".m" files house object-oriented MATLAB classes which are used in the top-level scripts.  A README has been included to help explain the objects and functions.
+            </p>
+            <p>
+              This report was a semester long deliverable for a class in advanced thermal fluid systems.  The goal of our project was to reverse-engineer many aspects of the G.E. LM2500 G4+DLE gas turbine that was being used within the U.T. power plant.  Using measurements taken from the turbine at various inlet airflow temperature's my team succesfully created a MATLAB simulation of the G.E. system.  The simulation, once optimized against data measured from the G.E. turbine, was able to calculate the efficiencies of the low and high pressure turbines and compressors located within the system.  From this project I furthered my understanding of the difficult thermodynamic and heat transfer processes involved in power generation.  My team and I learned how operating temperatures, pressures, mass-flow rates, and device efficiencies affected turbines, compressors, and combustors performance and the operating conditions for effective power generation. 
+            </p>
+          </div>
+          <div class="project">
+            <h1>C++ Wave Simulator</h1>
+            <h2><a href="https://github.com/daniel-p-sullivan/cpp_wave">GitHub</a></h2>
+            <img src="./images/wave_simulator1.gif">
+            <p>
+              I started this project with the intention of learning C++.  I found Java source code for the simulator, and learned to translate it into highly optimized C++ code.  The C++ Code I wrote simulated the shallow water equations, a special solution to the Navier-stokes equations.  The simulator uses the equations along with a 3 step Runge-Kutta to iterate through time with varying time steps.
+            </p>
+            <p>
+              The python program "CFD_CPP_2D.py" makes and runs the C++ program. The C++ program writes text files to a "./out/" directory and then the python program will plot and save png files of the data plots.  After all plots have been made, a program called FFmpeg combines all the png files into a gif and avi file. 
+            </p>
+            <p>
+              "CFD_CPP_2D.cpp", "DomainFunctions.cpp", and "FileWriter.cpp" are the main C++ files.  The python plotter is named "CFD_CPP_2D.py".
+            </p>
+          </div>
         </div>
-        <br>
-        <div class="project">
-          <h1>Python Scripts and VBA for Product BOM Management</h1>
-          <h3><i>Self-started project completed as an employee of Edwards Lifesciences</i></h3>
-          <p>
-            When I was hired on to Edwards Lifesciences in 2018, my project team was tasked with re-working over 750 seperate models within Edwards portfolio.  As these scripts were developed for Edwards Lifesciences, I am not able to share them here.
-          </p>
-          <p>
-            With my programming knowledge, I instantly saw process-improvements that could be made.  Our Excel BOMs were inefficient, and required much more manual interaction than required.  In order to resolve this, I developed Excel VBA Macros for our team to automate the process of BOM creation and checking.
-          </p>
-          <p>
-            Later in the project, when running analysis on all 750 of the Excel BOMs was more important, I developed a small library of Python scripts to interact with our Excel BOMs.  Throughout the lifetime of the project, there were multiple times where my Python library was <i><b>able to save my team months of work.</b></i>
-          </p>
+      </div>
+      <div class="content-item">
+        <div id="about">
+          <h1>
+            THIS IS THE ABOUT SECTION
+          </h1>
         </div>
-        <br>
-        <div class="project">
-          <h1>Analysis of General Electric LM2500 G4+DLE Aeroderivative Gas Turbine</h1>
-          <h2><a href="https://github.com/daniel-p-sullivan/TFS-Project">GitHub</a></h2>
-          <img src="./images/ge_turbine.jpg" height="400">
-          <img src="./images/ge_simulation_plot.png" height="400">
-          <p>
-            All MATLAB code written for this project is available at the GitHub link above.  Top-level scripts to run, and which would be helpful to understand the organization of the project are "Cycle_Solver_Phase_1.m" and "Cycle_Solver_Phase_2.m".  These are the main scripts of the project, and the majority of the other ".m" files house object-oriented MATLAB classes which are used in the top-level scripts.  A README has been included to help explain the objects and functions.
-          </p>
-          <p>
-            This report was a semester long deliverable for a class in advanced thermal fluid systems.  The goal of our project was to reverse-engineer many aspects of the G.E. LM2500 G4+DLE gas turbine that was being used within the U.T. power plant.  Using measurements taken from the turbine at various inlet airflow temperature's my team succesfully created a MATLAB simulation of the G.E. system.  The simulation, once optimized against data measured from the G.E. turbine, was able to calculate the efficiencies of the low and high pressure turbines and compressors located within the system.  From this project I furthered my understanding of the difficult thermodynamic and heat transfer processes involved in power generation.  My team and I learned how operating temperatures, pressures, mass-flow rates, and device efficiencies affected turbines, compressors, and combustors performance and the operating conditions for effective power generation. 
-          </p>
-        </div>
-        <div class="project">
-          <h1>C++ Wave Simulator</h1>
-          <h2><a href="https://github.com/daniel-p-sullivan/cpp_wave">GitHub</a></h2>
-          <img src="./images/wave_simulator1.gif">
-          <p>
-            I started this project with the intention of learning C++.  I found Java source code for the simulator, and learned to translate it into highly optimized C++ code.  The C++ Code I wrote simulated the shallow water equations, a special solution to the Navier-stokes equations.  The simulator uses the equations along with a 3 step Runge-Kutta to iterate through time with varying time steps.
-          </p>
-          <p>
-            The python program "CFD_CPP_2D.py" makes and runs the C++ program. The C++ program writes text files to a "./out/" directory and then the python program will plot and save png files of the data plots.  After all plots have been made, a program called FFmpeg combines all the png files into a gif and avi file. 
-          </p>
-          <p>
-            "CFD_CPP_2D.cpp", "DomainFunctions.cpp", and "FileWriter.cpp" are the main C++ files.  The python plotter is named "CFD_CPP_2D.py".
-          </p>
+      </div>
+      <div class="content-item">
+        <div id="writing">
+          <h1>
+            THIS IS THE <i>writing</i> SECTION
+          </h1>
         </div>
       </div>
     </div>
